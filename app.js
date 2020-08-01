@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-pratim:potlac440@cluster0-3lhou.mongodb.net/todolistDB", {
+mongoose.connect(process.env.MONGO_URL + "/todolistDB", {
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false
